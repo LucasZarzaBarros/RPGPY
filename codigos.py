@@ -8,6 +8,7 @@ with open ('Personagem e Objetivo.txt') as objetivo:
 
 ## Estou printando o Objetivo e a historia do personagem
 print(historia)
+print("--------------------------------------------------------------------------------------------")
 
 ## Aqui e a Primeira funcao que imprime todas as aventuras
 def imprime(copia):
@@ -34,28 +35,6 @@ def apagaUm(copia3, v):
             ## Aqui e o print das aventuras
             print(f"Aventura: {i['aventura']}")
 
-
-
-## Tentativa de uma funão que mostra apenas uma aventura e faça o usuario escolher entre Opção A e Opção B
-def extra(copia4, n):
-    for i in copia4:
-        if i == n:
-            print(f"Aventura: {i['aventura']}")
-            print("Você tem Duas Opções")
-            print(f"Opção A: {i['OpcaoA']}" )
-            print(f"Opção B: {i['OpcaoB']}")
-
-    escolha = input("Escolha entre A e B: ")
-    while escolha != 'a' and escolha != 'A' and escolha != 'b' and escolha != 'B':
-        escolha = input("Escolha entre A e B: ") 
-
-    if escolha == "b" and escolha == "B":
-        print("Você escolheu a opção b")
-
-    else:
-        print("Você escolheu a Opção a")
-
-
 ## Aqui vai ser a variavel que vai receber a planilha
 plani = []
 
@@ -69,20 +48,22 @@ with open ('planilhajogo.csv', 'r') as planilha:
          ## Aqui estou adicionando um elemento no vetor
          plani.append(n)
         
+print(plani)
+
 ## Aqui e a variavel que faz com que n tenha o valor atribuido a plani indice [1]
 n = plani[1]
 
 ## Aqui e a variavel que faz com que j tenha o valor atribuido a plani indice [3]
-j = plani[3]
+j = plani[0]
 
-## Aqui estou chamando a função extra e passando dois parametros  
-extra(plani, n)
-
+print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 ## Aqui estou chamando a Primeira função e estou passando apenas um parametro
 imprime(plani)
 
+print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 ## Aqui estou chamando a Segunda função e estou passando dois parametros
 imprimeUm(plani, n)
 
+print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 ## Aqui estou chamando a Terceira função e estou passando dois parametros
 apagaUm(plani, j)
