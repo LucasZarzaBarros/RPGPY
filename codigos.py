@@ -29,11 +29,12 @@ def imprimeUm(copia2, j):
 ## Aqui e a Terceira funcao que imprime apenas uma das aventuras
 def apagaUm(copia3, v):
     ## Usei um For para entrar varias vezes no vetor e depois remover uma das aventuras
-    for i in copia3:
+    for i in range(0,len(copia3)):
         ## Aqui eu estou dizendo que se meu i for diferente do v que significa o indice do vetor ele vai imprimir caso i for igual que v ele não vai entrar ele passara reto
-        if i != v:
+        if i == v:
             ## Aqui e o print das aventuras
-            print(f"Aventura: {i['aventura']}")
+            copia3.pop(v)
+    return copia3
 
 ## Aqui vai ser a variavel que vai receber a planilha
 plani = []
@@ -54,11 +55,11 @@ print(plani)
 n = plani[1]
 
 ## Aqui e a variavel que faz com que j tenha o valor atribuido a plani indice [3]
-j = plani[0]
+j = 0
 
-print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+##print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 ## Aqui estou chamando a Primeira função e estou passando apenas um parametro
-imprime(plani)
+##imprime(plani)
 
 print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 ## Aqui estou chamando a Segunda função e estou passando dois parametros
@@ -66,4 +67,6 @@ imprimeUm(plani, n)
 
 print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 ## Aqui estou chamando a Terceira função e estou passando dois parametros
-apagaUm(plani, j)
+aspaga = apagaUm(plani, j)
+
+print(aspaga)
