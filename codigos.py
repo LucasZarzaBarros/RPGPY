@@ -331,6 +331,10 @@ def jogoAleatorio(copia4, m, ale1, ale2, aleatorio, com):
                         ## função para deixar o jogo mais bonito
                         mostraLinha()
 
+                        ## //
+                        print(m)
+                        bussula = 20 
+
                         ## Aqui vai ser a variavel que vai guardar a resposta do usuario
                         cont = input("Coloque C para continuar sua aventura ou coloque V para voltar sua aventura: ")
                         ## Aqui so vai entrar se cont que é uma variavel for diferente de C ou de V
@@ -340,7 +344,7 @@ def jogoAleatorio(copia4, m, ale1, ale2, aleatorio, com):
                         ##Aqui ele so vai entrar se o cont for igual a C ou c    
                         if cont == "C" or cont == "c":
                             ## Aqui quer dizer que m vai de 1 em 1
-                            m = m + 1
+                            m = random.randint(0, bussula - 1)
                             ## Aqui ele vai gerar outro numero aleatorio
                             aleatorio = random.randint(1, 100) 
 
@@ -358,7 +362,8 @@ def jogoAleatorio(copia4, m, ale1, ale2, aleatorio, com):
                                 print(" Orgulhoso de sua coragem e determinação, ele sorri para o horizonte, sabendo que sua jornada não foi em vão.")
                                 ## Aqui vai printar informações adicionais
                                 print(" Seja pela justiça feita ou pela redenção encontrada, Nico celebra a nova fase de sua vida, onde a esperança e a paz de espírito reinam em seu coração.")
-
+                        ##         
+                        print(m)
                         if  cont == "V" or cont == "v":
                              if i == copia4[m]:
                                 ## função para deixar o jogo mais bonito
@@ -402,7 +407,7 @@ def jogoAleatorio(copia4, m, ale1, ale2, aleatorio, com):
                                                 print(f"Fracasso: {i['Fracasso A']}")   
                                                 marcador = 1
                                         aux2 = aux2 + 1
-                             m = m + 1               
+                                bussula = 20 - 1
                     else:
                         ## função para deixar o jogo mais bonito
                         mostraLinha()   
@@ -410,7 +415,7 @@ def jogoAleatorio(copia4, m, ale1, ale2, aleatorio, com):
                         print(" Assim, o guerreiro destemido aprendeu na dor a mais dura lição: nem toda jornada termina com a vitória almejada.")
                         print(" A historia do seu personagem chega ao fim você consegui sobreviver até a missão: ", m)
                         break               
-
+                   
 ##----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Função 3
 def jogadorEscolhe(planilha, probabilidadeA, probabilidadeB, escolhaUsuario, ale, come):
